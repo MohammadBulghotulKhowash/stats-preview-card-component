@@ -27,8 +27,8 @@ This is a solution to the [Stats preview card component challenge on Frontend Me
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/responsive-design-stats-preview-card-component-with-vanilla-css-t4Tw3ySleR)
+- Live Site URL: [Add live site URL here](https://mohammadbulghotulkhowash.github.io/stats-preview-card-component.github.io/)
 
 ## My process
 
