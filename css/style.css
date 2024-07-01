@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lexend+Deca&display=swap");
+
+:root {
+  --primary-font-style: "Inter", sans-serif;
+  --secondary-font-style: "Lexend Deca", sans-serif;
+
+  --main-background: hsl(233, 47%, 7%);
+  --card-background: hsl(244, 38%, 16%);
+
+  --primary-font-color: hsl(0, 0%, 100%);
+  --secondary-font-color: hsla(0, 0%, 100%, 0.75);
+  --stats-heading: hsla(0, 0%, 100%, 0.6);
+  --accent-color: hsl(277, 64%, 61%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--primary-font-style);
+  background-color: var(--main-background);
+  color: var(--primary-font-color);
+  font-size: 0.75em;
+}
+
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  width: 930px;
+  /* height: 350px; */
+  background-color: var(--card-background);
+  border-radius: 10px;
+}
+
+.preview-image {
+  order: 2;
+  background-color: var(--accent-color);
+  border-radius: 0 10px 10px 0;
+  height: fit-content;
+}
+
+.preview-image img {
+  display: block;
+  width: 476px;
+  mix-blend-mode: multiply;
+}
+
+.description {
+  order: 1;
+  padding: 3rem 5rem 3rem 3rem;
+}
+
+.description .header,
+.stats {
+  font-weight: 700;
+}
+
+.description .header {
+  text-wrap: balance;
+  font-size: 2.5em;
+}
+
+.description .header .accent {
+  color: var(--accent-color);
+}
+
+.description .detail {
+  color: var(--secondary-font-color);
+  margin: 1.5rem 1rem 2rem 0;
+  line-height: 1.5em;
+  font-weight: 400;
+}
+
+.stats {
+  display: grid;
+  grid-template-areas: "companies templates queries";
+  margin-top: 3rem;
+}
+
+.stats .companies {
+  grid-area: companies;
+}
+
+.stats .templates {
+  grid-area: templates;
+}
+
+.stats .queries {
+  grid-area: queries;
+}
+
+.stats .bold {
+  display: block;
+}
+
+.stats .notes,
+.unit {
+  text-transform: uppercase;
+}
+
+.stats .notes {
+  color: var(--secondary-font-color);
+  font-family: var(--secondary-font-style);
+  margin-top: 0.3rem;
+  font-size: 1em;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+.stats .contributor {
+  font-size: 1.5em;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+/* mobile */
+@media screen and (max-width: 574px) {
+    main {
+        margin: 3.5rem 0;
+    }
+
+  .container {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .preview-image {
+    order: 1;
+    width: max-content;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .preview-image img {
+    width: 300px;
+  }
+
+  .preview-image img::after {
+    background-image: url("../images/image-header-mobile.jpg");
+    background-size: cover;
+  }
+
+  .description {
+    order: 2;
+    text-align: center;
+    padding: 1.3rem 1rem;
+  }
+
+  .description .header {
+    font-size: 2em;
+    text-wrap: wrap;
+    margin-inline: 0.8rem;
+  }
+
+  .description .detail {
+    font-size: 1.2em;
+    line-height: 2em;
+    text-wrap: wrap;
+    margin-inline: 0.3rem;
+  }
+
+  .stats {
+    grid-template-areas:
+      "companies"
+      "templates"
+      "queries";
+    margin-top: 0;
+  }
+
+  .stats .companies,
+  .templates,
+  .queries {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 575px) and (max-width: 1023px) {
+  .container {
+    flex-direction: column;
+    width: 650px;
+  }
+
+  .preview-image {
+    order: 1;
+    width: max-content;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .preview-image img {
+    width: 650px;
+    height: 350px;
+  }
+
+  .description {
+    order: 2;
+    text-align: center;
+    padding: 2.5rem 2rem;
+
+    display: grid;
+    grid-template-areas:
+      "header stats"
+      "detail stats";
+    grid-template-columns: 1.8fr 1.5fr;
+  }
+
+  .description .header,
+  .detail {
+    text-align: left;
+  }
+
+  .description .header {
+    grid-area: header;
+    font-size: 2em;
+    text-wrap: wrap;
+    margin-inline: 0.8rem;
+  }
+
+  .description .detail {
+    grid-area: detail;
+    font-size: 1.2em;
+    line-height: 2em;
+    text-wrap: wrap;
+    margin-inline: 0.3rem;
+  }
+
+  .stats {
+    grid-area: stats;
+    grid-template-areas:
+      "companies"
+      "templates"
+      "queries";
+    margin-top: 0;
+    justify-items: center;
+  }
+
+  .stats .companies,
+  .templates,
+  .queries {
+    margin-bottom: 1.5rem;
+  }
+}
